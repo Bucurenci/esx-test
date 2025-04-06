@@ -1,18 +1,8 @@
 import type {Metadata} from "next";
-import {Geist, Geist_Mono} from "next/font/google";
 import {ReactNode} from "react";
+import Header from "@/components/layout/Header";
 import "bootstrap/scss/bootstrap.scss"
 import "./globals.scss";
-
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -24,38 +14,11 @@ export default function RootLayout({children}: Readonly<{
 }>) {
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable}`}>
-                <header className="container">
-                    <h1>Welcome to the App</h1>
-                    <nav>
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/about">About</a></li>
-                            <li><a href="/contact">Contact</a></li>
-                        </ul>
-                    </nav>
-                </header>
+            <body>
+                <Header />
                 <main className="container">
                     {children}
                 </main>
-                <footer>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-6">
-                                <p>&copy; {new Date().getFullYear()} My App. All rights reserved.</p>
-                            </div>
-
-                            <div className="col-6 text-end">
-                                <p>Follow us on:</p>
-                                <ul className="list-inline">
-                                    <li className="list-inline-item"><a href="#">Facebook</a></li>
-                                    <li className="list-inline-item"><a href="#">Twitter</a></li>
-                                    <li className="list-inline-item"><a href="#">Instagram</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
             </body>
         </html>
     );
