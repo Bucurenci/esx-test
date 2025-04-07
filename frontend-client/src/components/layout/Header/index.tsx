@@ -1,6 +1,7 @@
 import "./header.scss"
 import MobileMenuButton from "@/components/layout/Header/MobileMenuButton";
 import Link from "next/link";
+import Image from "next/image";
 import NavbarItem from "@/components/layout/Header/NavbarItem";
 
 export default function Header() {
@@ -11,7 +12,7 @@ export default function Header() {
               <div className="left-side">
                   {/* logo */}
                   <Link href="/" className="logo-frame">
-                      <img src="/logo.svg" alt="ESX Logo" />
+                      <Image src="/logo.svg" alt="ESX Logo" width={110} height={38} />
                   </Link>
               </div>
               <div className="right-side w-100">
